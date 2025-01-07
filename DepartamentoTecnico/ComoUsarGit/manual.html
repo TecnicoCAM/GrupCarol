@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="gu%C3%ADa-de-uso-de-git">Guía de Uso de Git</h1>
+<p>Este manual proporciona una introducción práctica a los comandos más comunes y útiles de Git.</p>
+<blockquote>
+<p>ℹ️ <strong>Nota</strong>: Para usar Git necesitas tenerlo instalado en tu sistema. Puedes descargarlo desde <a href="https://git-scm.com/">git-scm.com</a>.</p>
+</blockquote>
+<h2 id="tabla-de-contenidos">Tabla de Contenidos</h2>
+<ul>
+<li><a href="#configuraci%C3%B3n-inicial">Configuración Inicial</a></li>
+<li><a href="#comandos-b%C3%A1sicos">Comandos Básicos</a></li>
+<li><a href="#trabajo-con-ramas">Trabajo con Ramas</a></li>
+<li><a href="#gesti%C3%B3n-de-forks-y-pull-requests">Gestión de Forks y Pull Requests</a></li>
+<li><a href="#resoluci%C3%B3n-de-conflictos">Resolución de Conflictos</a></li>
+</ul>
+<hr>
+<h2 id="configuraci%C3%B3n-inicial">Configuración Inicial</h2>
+<p>Antes de comenzar, configura tu identidad en Git:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Configurar nombre de usuario</span>
+$ git config --global user.name <span class="hljs-string">"Tu Nombre"</span>
+
+<span class="hljs-comment"># Configurar correo electrónico</span>
+$ git config --global user.email <span class="hljs-string">"tuemail@example.com"</span>
+</div></code></pre>
+<blockquote>
+<p>✅ <strong>Tip</strong>: Usa <code>git config --list</code> para verificar la configuración.</p>
+</blockquote>
+<hr>
+<h2 id="comandos-b%C3%A1sicos">Comandos Básicos</h2>
+<h3 id="inicializar-un-repositorio">Inicializar un Repositorio</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Crear un repositorio en un directorio local</span>
+$ git init
+</div></code></pre>
+<h3 id="clonar-un-repositorio">Clonar un Repositorio</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Descargar un repositorio existente</span>
+$ git <span class="hljs-built_in">clone</span> &lt;URL-del-repositorio&gt;
+</div></code></pre>
+<h3 id="comprobar-el-estado">Comprobar el Estado</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Ver cambios pendientes</span>
+$ git status
+</div></code></pre>
+<h3 id="a%C3%B1adir-cambios">Añadir Cambios</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Añadir un archivo específico</span>
+$ git add archivo.txt
+
+<span class="hljs-comment"># Añadir todos los cambios</span>
+$ git add .
+</div></code></pre>
+<h3 id="confirmar-cambios">Confirmar Cambios</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Crear un commit con un mensaje descriptivo</span>
+$ git commit -m <span class="hljs-string">"Descripción del cambio"</span>
+</div></code></pre>
+<h3 id="ver-el-historial">Ver el Historial</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Mostrar todos los commits del repositorio</span>
+$ git <span class="hljs-built_in">log</span>
+</div></code></pre>
+<h3 id="subir-cambios-al-repositorio-remoto">Subir Cambios al Repositorio Remoto</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Subir cambios a la rama principal del remoto</span>
+$ git push origin main
+</div></code></pre>
+<h3 id="descargar-cambios-del-repositorio-remoto">Descargar Cambios del Repositorio Remoto</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Descargar la última versión del repositorio remoto</span>
+$ git pull origin main
+</div></code></pre>
+<hr>
+<h2 id="trabajo-con-ramas">Trabajo con Ramas</h2>
+<h3 id="crear-una-nueva-rama">Crear una Nueva Rama</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Crear y moverse a una nueva rama</span>
+$ git checkout -b nombre-de-la-rama
+</div></code></pre>
+<h3 id="cambiar-de-rama">Cambiar de Rama</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Cambiar a una rama existente</span>
+$ git checkout nombre-de-la-rama
+</div></code></pre>
+<h3 id="combinar-ramas-merge">Combinar Ramas (Merge)</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Combinar una rama en la rama actual</span>
+$ git merge nombre-de-la-rama
+</div></code></pre>
+<h3 id="eliminar-una-rama">Eliminar una Rama</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Eliminar una rama local</span>
+$ git branch -d nombre-de-la-rama
+</div></code></pre>
+<hr>
+<h2 id="gesti%C3%B3n-de-forks-y-pull-requests">Gestión de Forks y Pull Requests</h2>
+<h3 id="hacer-un-fork">Hacer un Fork</h3>
+<ol>
+<li>Ve al repositorio que deseas bifurcar en GitHub.</li>
+<li>Haz clic en el botón <strong>Fork</strong> para crear una copia en tu cuenta.</li>
+</ol>
+<h3 id="clonar-tu-fork">Clonar tu Fork</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Clonar el fork en tu máquina local</span>
+$ git <span class="hljs-built_in">clone</span> &lt;URL-de-tu-fork&gt;
+</div></code></pre>
+<h3 id="sincronizar-cambios-con-el-original">Sincronizar Cambios con el Original</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Agregar el repositorio original como remoto "upstream"</span>
+$ git remote add upstream &lt;URL-del-repositorio-original&gt;
+
+<span class="hljs-comment"># Descargar cambios del upstream</span>
+$ git fetch upstream
+
+<span class="hljs-comment"># Combinar cambios del upstream en tu rama local</span>
+$ git merge upstream/main
+</div></code></pre>
+<h3 id="crear-un-pull-request">Crear un Pull Request</h3>
+<ol>
+<li>Sube tus cambios a tu fork:<pre class="hljs"><code><div>$ git push origin nombre-de-la-rama
+</div></code></pre>
+</li>
+<li>Ve a la página de tu fork y haz clic en <strong>New Pull Request</strong>.</li>
+<li>Describe tus cambios y envía la solicitud.</li>
+</ol>
+<hr>
+<h2 id="resoluci%C3%B3n-de-conflictos">Resolución de Conflictos</h2>
+<p>Los conflictos ocurren cuando Git no puede combinar automáticamente los cambios. Sigue estos pasos para resolverlos:</p>
+<ol>
+<li>
+<p>Identifica los conflictos:</p>
+<pre class="hljs"><code><div>$ git status
+</div></code></pre>
+</li>
+<li>
+<p>Edita los archivos en conflicto. Busca marcas como estas:</p>
+<pre class="hljs"><code><div>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Tu cambio
+=======
+Cambio en el remoto
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; upstream/main
+</div></code></pre>
+</li>
+<li>
+<p>Elimina las marcas y combina los cambios manualmente.</p>
+</li>
+<li>
+<p>Añade los cambios resueltos:</p>
+<pre class="hljs"><code><div>$ git add archivo.txt
+</div></code></pre>
+</li>
+<li>
+<p>Crea un nuevo commit:</p>
+<pre class="hljs"><code><div>$ git commit -m <span class="hljs-string">"Resolver conflictos en archivo.txt"</span>
+</div></code></pre>
+</li>
+</ol>
+<hr>
+
+</body>
+</html>

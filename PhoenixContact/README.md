@@ -11,7 +11,7 @@ Este directorio contiene ejemplos, manuales y proyectos relacionados con la conf
 
 ## Ejemplos Disponibles
 
-### [EPC Lector USB](EPCLectorUSB/manual.md)
+### [EPC Lector USB](EPCLectorUSB/README.md)
 - **Descripción**: Ejemplo de cómo leer eventos de dispositivos USB (como teclados y lectores de códigos de barras) conectados a un PLC Phoenix Contact EPC.
 
 ## Cómo Usar Este Directorio

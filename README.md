@@ -13,6 +13,7 @@ Bienvenidos al repositorio del **Departamento Técnico de Grupo Carol**. Este es
 ## Estructura del Repositorio
 El repositorio está organizado en directorios según los principales fabricantes y tecnologías que manejamos. Dentro de cada directorio encontrarás material relacionado con proyectos y equipos específicos, incluyendo manuales, ejemplos de proyectos y otros recursos útiles.
 
+Ejemplo de estructura:
 ```
 GrupCarol/
 ├── DepartametoTecnico/
@@ -22,7 +23,7 @@ GrupCarol/
 │   ├── ...
 ├── Siemens/
 │   ├── Material1/
-│   │   ├── manual.md
+│   │   ├── README.md
 │   │   ├── manual.pdf
 │   │   ├── proyecto_ejemplo.zip
 │   │   ├── imagenes/
@@ -33,13 +34,14 @@ GrupCarol/
 │   └── README.md
 ├── Omron/
 ├── Phoenix/
+├── ...
 ├── README.md
 └── LICENSE.md
 ```
 
 Cada directorio incluye:
 - **README.md**: Listado de ejemplos disponibles y breve descripción.
-- **Material de cada ejemplo**: Archivos de manuales (en formatos `.md` y `.pdf`), proyectos de ejemplo, imágenes, y cualquier otro material relevante.
+- **Material de cada ejemplo**: Archivos de manuales (en formatos `README.md`, `manual.html` y `manual.pdf`), proyectos de ejemplo, imágenes, y cualquier otro material relevante.
 
 ## Cómo Contribuir
 ¡Las contribuciones son bienvenidas! Para mantener la coherencia y calidad del contenido, por favor sigue estas pautas:
@@ -59,11 +61,6 @@ Este repositorio está licenciado bajo la Licencia **Creative Commons Attributio
 - **No se pueden realizar obras derivadas** basadas en este contenido.
 
 Puedes consultar más detalles sobre esta licencia en [Creative Commons](https://creativecommons.org/licenses/by-nc-nd/4.0/).
-
-## Contacto
-Para cualquier consulta o sugerencia, no dudes en ponerte en contacto con el Departamento Técnico de **Grupo Carol**:
-- Email: [tecnico@gc.com](mailto:tecnico@gc.com)
-- Teléfono: +34 123 456 789
 
 ---
 

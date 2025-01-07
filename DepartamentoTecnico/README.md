@@ -9,7 +9,7 @@ Este directorio contiene ejemplos, manuales y proyectos relacionados con la conf
 
 ## Ejemplos Disponibles
 
-### [Como usar git](ComoUsarGit/manual.md)
+### [Como usar git](ComoUsarGit/README.md)
 - **Descripción**: Se explican los comandos básicos y habituales para usar Git. 
 
 ## Cómo Usar Este Directorio

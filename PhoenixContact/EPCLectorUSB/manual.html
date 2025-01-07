@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="epc-lector-usb">EPC Lector USB</h1>
+<p>Este directorio contiene un ejemplo de cómo leer eventos de dispositivos USB (como teclados y lectores de códigos de barras) conectados a un PLC Phoenix Contact EPC 1502 utilizando Yocto Linux Kirkstone. Se utiliza un script en Python que se ejecuta desde Node-RED para interpretar los eventos del puerto USB.</p>
+<blockquote>
+<p>ℹ️ <strong>Nota</strong>: Este proyecto está diseñado y probado específicamente para el PLC Phoenix Contact EPC 1502 con Yocto Linux Kirkstone. Puede requerir ajustes para otros modelos o sistemas.</p>
+</blockquote>
+<h2 id="tabla-de-contenidos">Tabla de Contenidos</h2>
+<ul>
+<li><a href="#introducci%C3%B3n">Introducción</a></li>
+<li><a href="#contenido-del-directorio">Contenido del Directorio</a></li>
+<li><a href="#instalaci%C3%B3n">Instalación</a>
+<ul>
+<li><a href="#configuraci%C3%B3n-del-entorno">Configuración del Entorno</a></li>
+<li><a href="#preparaci%C3%B3n-del-script-en-python">Preparación del Script en Python</a></li>
+<li><a href="#modificaci%C3%B3n-de-node-red">Modificación de Node-RED</a></li>
+</ul>
+</li>
+<li><a href="#uso-del-proyecto">Uso del Proyecto</a></li>
+<li><a href="#c%C3%B3mo-funciona-el-c%C3%B3digo">Cómo Funciona el Código</a></li>
+<li><a href="#ejemplos-de-uso">Ejemplos de Uso</a></li>
+<li><a href="#programa-en-node-red">Programa en Node-RED</a>
+<ul>
+<li><a href="#ejemplo-de-uso-del-flujo">Ejemplo de Uso del Flujo</a></li>
+</ul>
+</li>
+<li><a href="#instrucciones-de-configuraci%C3%B3n-adicionales">Instrucciones de Configuración Adicionales</a></li>
+<li><a href="#licencia">Licencia</a></li>
+</ul>
+<h2 id="introducci%C3%B3n">Introducción</h2>
+<p>El objetivo de este ejemplo es demostrar cómo leer e interpretar los eventos generados por dispositivos USB conectados al PLC, como un teclado o un lector de códigos de barras, en un entorno Node-RED.</p>
+<h2 id="contenido-del-directorio">Contenido del Directorio</h2>
+<p>La estructura del directorio es la siguiente:</p>
+<pre class="hljs"><code><div>EPCLectorUSB/
+├── src/
+│   └── usbdrivers.py              # Script en Python para leer eventos del puerto USB
+├── flows/
+│   └── flows_usb.json             # Flujos para importar en Node-RED
+└── README.md                      # Documentación principal del proyecto
+</div></code></pre>
+<h2 id="instalaci%C3%B3n">Instalación</h2>
+<h3 id="configuraci%C3%B3n-del-entorno">Configuración del Entorno</h3>
+<ol>
+<li><strong>Configurar acceso root:</strong>
+<ul>
+<li>Crear nueva contraseña para el usuario <code>root</code> en el dispositivo:<pre class="hljs"><code><div>sudo passwd root
+</div></code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>Advertencia</strong>: Cambiar la contraseña de root es una operación sensible; asegúrate de recordar la nueva contraseña para evitar problemas de acceso al dispositivo.</p>
+</blockquote>
+<h3 id="preparaci%C3%B3n-del-script-en-python">Preparación del Script en Python</h3>
+<ol>
+<li>Crear un directorio para el script:<pre class="hljs"><code><div>mkdir /home/root/usbdrivers
+</div></code></pre>
+</li>
+<li>Crear el archivo <code>usbdrivers.py</code>:<pre class="hljs"><code><div>touch /home/root/usbdrivers/usbdrivers.py
+</div></code></pre>
+</li>
+<li>Copiar el código Python del archivo <code>src/usbdrivers.py</code> a este directorio en el dispositivo:<pre class="hljs"><code><div>nano /home/root/usbdrivers/usbdrivers.py
+</div></code></pre>
+(Pegar el contenido y guardar).</li>
+</ol>
+<h3 id="modificaci%C3%B3n-de-node-red">Modificación de Node-RED</h3>
+<ol>
+<li>Abrir el archivo de configuración de Node-RED:<pre class="hljs"><code><div>nano /opt/plcnext/appshome/data/60002172000551/docker-compose.yml
+</div></code></pre>
+</li>
+</ol>
+<blockquote>
+<p>ℹ️ <strong>Nota</strong>: El directorio <code>60002172000551</code> puede variar según la versión de Node-RED instalada; consulta la estructura de archivos en el dispositivo si es necesario.</p>
+</blockquote>
+<ol start="2">
+<li>Modificar el archivo de la siguiente manera:<pre class="hljs"><code><div><span class="hljs-attr">version:</span> <span class="hljs-string">"3.7"</span>
+<span class="hljs-attr">services:</span>
+  <span class="hljs-attr">node-red:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">${IMAGE_NAME}:${IMAGE_TAG}</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-number">51880</span><span class="hljs-string">:1880</span>
+    <span class="hljs-attr">user:</span> <span class="hljs-string">root</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">./volumes/node-red:/data</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">/home/root/usbdrivers:/usbdrivers</span>
+    <span class="hljs-attr">restart:</span> <span class="hljs-string">unless-stopped</span>
+    <span class="hljs-attr">privileged:</span> <span class="hljs-literal">true</span>
+</div></code></pre>
+</li>
+</ol>
+<blockquote>
+<p>❗ <strong>Importante</strong>: Verifica que la ruta <code>/home/root/usbdrivers</code> esté correctamente escrita y montada. Los permisos incorrectos pueden impedir la lectura de eventos USB.</p>
+</blockquote>
+<ol start="3">
+<li>Reiniciar el dispositivo para aplicar los cambios:<pre class="hljs"><code><div>reboot
+</div></code></pre>
+</li>
+</ol>
+<h2 id="uso-del-proyecto">Uso del Proyecto</h2>
+<p>Con Node-RED configurado para utilizar el script Python, se puede conectar un teclado o lector de código de barras al PLC y observar cómo se interpretan los eventos en tiempo real.</p>
+<blockquote>
+<p>✅ <strong>Tip</strong>: Conecta y prueba el dispositivo USB (teclado o lector de código de barras) antes de comenzar. Puedes verificar la salida de eventos USB en Node-RED para asegurarte de que el script está funcionando.</p>
+</blockquote>
+<h2 id="c%C3%B3mo-funciona-el-c%C3%B3digo">Cómo Funciona el Código</h2>
+<h3 id="flujo-general-del-c%C3%B3digo">Flujo General del Código</h3>
+<ol>
+<li>
+<p><strong>Lectura del Evento</strong>:</p>
+<ul>
+<li>El script abre el archivo <code>/dev/input/eventX</code>, donde <code>X</code> representa el número del evento USB asignado al dispositivo.</li>
+<li>Lee paquetes de 24 bytes que contienen información sobre el evento (timestamp, tipo, código y valor).</li>
+</ul>
+</li>
+<li>
+<p><strong>Interpretación del Evento</strong>:</p>
+<ul>
+<li>Los eventos de tipo <code>1</code> (evento de botón) con un valor <code>1</code> (presionado) representan pulsaciones de teclas.</li>
+<li>El script convierte el código de tecla (<code>code</code>) usando el diccionario <code>key_map</code> para traducirlo a caracteres legibles.</li>
+</ul>
+</li>
+<li>
+<p><strong>Buffer y Envío de Datos</strong>:</p>
+<ul>
+<li>Los caracteres se almacenan en un buffer temporal.</li>
+<li>Cuando el código detecta la tecla Enter (código <code>28</code>), imprime el contenido del buffer y lo vacía para la siguiente secuencia de entrada.</li>
+</ul>
+</li>
+</ol>
+<h3 id="integraci%C3%B3n-con-node-red">Integración con Node-RED</h3>
+<p>Node-RED se utiliza para ejecutar el script <code>usbdrivers.py</code> y mostrar los datos de eventos USB capturados en tiempo real. La integración con Node-RED se realiza mediante un flujo que ejecuta el script en un entorno de PLC.</p>
+<h3 id="errores-comunes-y-soluci%C3%B3n">Errores Comunes y Solución</h3>
+<ul>
+<li><strong>Código desconocido</strong>: Si se recibe un código que no está en <code>key_map</code>, el script simplemente lo ignora, asegurando que solo los caracteres conocidos se procesen.</li>
+<li><strong>Tecla Enter</strong>: El código <code>28</code> es clave, ya que indica el final de una secuencia de entrada (usado aquí como el botón Enter).</li>
+</ul>
+<h2 id="ejemplos-de-uso">Ejemplos de Uso</h2>
+<h3 id="ejemplo-1-lectura-de-teclado-usb">Ejemplo 1: Lectura de Teclado USB</h3>
+<ol>
+<li>Conecta un teclado USB al puerto USB del PLC.</li>
+<li>Asegúrate de que el script <code>usbdrivers.py</code> esté en ejecución y vinculado al archivo de evento correcto (por ejemplo, <code>/dev/input/event0</code>).</li>
+<li>Abre Node-RED y visualiza la salida en el nodo de depuración.</li>
+</ol>
+<h4 id="ejemplo-de-salida-esperada">Ejemplo de Salida Esperada</h4>
+<p>Al presionar la tecla <code>H</code>, <code>O</code>, <code>L</code>, <code>A</code>, y luego Enter en el teclado USB, la salida esperada será:</p>
+<pre class="hljs"><code><div>HOLA
+</div></code></pre>
+<h3 id="ejemplo-2-lector-de-c%C3%B3digo-de-barras">Ejemplo 2: Lector de Código de Barras</h3>
+<ol>
+<li>Conecta el lector de código de barras USB.</li>
+<li>Escanea un código de barras, y el dispositivo debería enviar una serie de eventos USB.</li>
+<li>El script interpretará estos eventos y mostrará el código escaneado en Node-RED.</li>
+</ol>
+<h4 id="ejemplo-de-salida">Ejemplo de Salida</h4>
+<p>Escanear un código de barras podría generar una salida similar a esta:</p>
+<pre class="hljs"><code><div>1234567890123
+</div></code></pre>
+<p>Asegúrate de que el lector esté configurado para enviar un código de &quot;Enter&quot; después de cada escaneo, lo cual activará el envío de los datos a Node-RED.</p>
+<h2 id="programa-en-node-red">Programa en Node-RED</h2>
+<p>El archivo <code>flows/flows_usb.json</code> contiene un flujo de Node-RED que ejecuta el script <code>usbdrivers.py</code> en Python para leer eventos desde dispositivos USB conectados al PLC Phoenix Contact.</p>
+<h3 id="descripci%C3%B3n-del-flujo">Descripción del Flujo</h3>
+<ol>
+<li><strong>Nodo Inject</strong>: Inicia el flujo para ejecutar el script manualmente y permite leer eventos en el dispositivo conectado.</li>
+<li><strong>Nodo Exec</strong>: Ejecuta el script <code>usbdrivers.py</code> en el PLC mediante el comando:<pre class="hljs"><code><div>python3 /usbdrivers/usbdrivers.py &lt;EventNumber&gt;
+</div></code></pre>
+<ul>
+<li><code>&lt;EventNumber&gt;</code> representa el número de evento del puerto USB (por ejemplo, <code>3</code> o <code>4</code>).</li>
+</ul>
+</li>
+<li><strong>Nodo Debug</strong>: Muestra la salida del script en la consola de depuración de Node-RED.</li>
+</ol>
+<h3 id="ejemplo-de-uso-del-flujo">Ejemplo de Uso del Flujo</h3>
+<ol>
+<li><strong>Ejecutar el Flujo</strong>: Abre Node-RED y ubica el flujo importado.</li>
+<li><strong>Iniciar Lectura de Eventos</strong>: Haz clic en el nodo <code>Inject</code> para iniciar la lectura de eventos en el dispositivo USB conectado.</li>
+<li><strong>Ver la Salida</strong>: La salida de los eventos USB se mostrará en el nodo <code>Debug</code> de Node-RED.</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>Nota</strong>: Los puertos <code>/dev/input/eventX</code> pueden variar según el dispositivo USB conectado y la configuración del sistema. Asegúrate de verificar el puerto asignado al dispositivo conectado.</p>
+</blockquote>
+<h2 id="instrucciones-de-configuraci%C3%B3n-adicionales">Instrucciones de Configuración Adicionales</h2>
+<h3 id="requisitos-de-sistema">Requisitos de Sistema</h3>
+<ul>
+<li><strong>Hardware</strong>: Este proyecto ha sido probado en un PLC Phoenix Contact EPC 1502.</li>
+<li><strong>Sistema Operativo</strong>: Yocto Linux Kirkstone.</li>
+<li><strong>Software Necesario</strong>:
+<ul>
+<li>Node-RED versión 4.0.2.1 o superior, instalado en PLCnext Store.</li>
+<li>Python 3.x instalado en el sistema.</li>
+</ul>
+</li>
+</ul>
+<h3 id="soluci%C3%B3n-de-problemas-comunes">Solución de Problemas Comunes</h3>
+<ol>
+<li><strong>Node-RED no detecta el script de Python</strong>:
+<ul>
+<li>Verifica que la ruta a <code>usbdrivers.py</code> esté correctamente montada en el archivo <code>docker-compose.yml</code>.</li>
+</ul>
+</li>
+<li><strong>Permisos de Lectura de Eventos USB</strong>:
+<ul>
+<li>Es posible que algunos eventos de <code>/dev/input</code> requieran permisos de superusuario. Añade <code>privileged: true</code> en <code>docker-compose.yml</code> para asegurarte de que Node-RED tenga los permisos necesarios.</li>
+</ul>
+</li>
+</ol>
+<h2 id="licencia">Licencia</h2>
+<p>Este repositorio está licenciado bajo la Licencia <strong>Creative Commons Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND)</strong>. Esto significa que:</p>
+<ul>
+<li>Puedes compartir el contenido, siempre que se atribuya correctamente al Grupo Carol.</li>
+<li><strong>No se permite el uso comercial</strong> de los materiales.</li>
+<li><strong>No se pueden realizar obras derivadas</strong> basadas en este contenido.</li>
+</ul>
+<p>Consulta más detalles sobre esta licencia en <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons</a>.</p>
+
+</body>
+</html>
