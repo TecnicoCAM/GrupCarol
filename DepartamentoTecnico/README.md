@@ -28,4 +28,3 @@ Las contribuciones son bienvenidas. Si tienes un ejemplo o recurso adicional rel
 4. Envía un Pull Request con los cambios.
 
 **¡Gracias por colaborar!**
-Test Merge 3
