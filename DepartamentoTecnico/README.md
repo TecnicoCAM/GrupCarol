@@ -27,5 +27,9 @@ Las contribuciones son bienvenidas. Si tienes un ejemplo o recurso adicional rel
 3. Actualiza este `README.md` con una descripción de tu contribución.
 4. Envía un Pull Request con los cambios.
 
+<<<<<<< HEAD
 **¡Gracias por colaborar!**
 Test Merge 3
+=======
+**¡Gracias por colaborar!**
+>>>>>>> 0ddeea3b88a58159a5d0f428e6821759efc2d4b3
