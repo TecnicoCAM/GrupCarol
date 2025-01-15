@@ -10,6 +10,7 @@ Este manual proporciona una introducción práctica a los comandos más comunes 
 - [Trabajo con Ramas](#trabajo-con-ramas)
 - [Gestión de Forks y Pull Requests](#gestión-de-forks-y-pull-requests)
 - [Resolución de Conflictos](#resolución-de-conflictos)
+- [Otros Datos de Interés](#otros-datos-de-interés)
 
 ---
 
@@ -173,6 +174,16 @@ Los conflictos ocurren cuando Git no puede combinar automáticamente los cambios
     ```bash
     $ git commit -m "Resolver conflictos en archivo.txt"
     ```
+
+## Otros Datos de Interés
+
+Aquí tienes recursos adicionales para aprender y optimizar tu uso de Git:
+
+- [Learn Git Branching](https://learngitbranching.js.org/): Plataforma interactiva para aprender sobre branching y otros conceptos fundamentales de Git.
+- [GitHub Skills](https://skills.github.com/): Curso interactivo oficial de GitHub que cubre desde lo básico hasta temas avanzados.
+- [Cheat Sheet de Git](./MaterialSuplementario/CheatSheet.pdf): Resumen con los comandos más utilizados para tener como referencia rápida.
+
+> 💡 **Tip**: Dedica tiempo a explorar estos recursos para profundizar en el uso de Git y mejorar tus habilidades.
 
 ---
 
