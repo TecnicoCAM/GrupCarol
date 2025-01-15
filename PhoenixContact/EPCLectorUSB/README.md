@@ -127,10 +127,10 @@ Node-RED se utiliza para ejecutar el script `usbdrivers.py` y mostrar los datos 
 3. Abre Node-RED y visualiza la salida en el nodo de depuración.
 
 #### Ejemplo de Salida Esperada
-Al presionar la tecla `H`, `O`, `L`, `A`, `.`, y luego Enter en el teclado USB, la salida esperada será:
+Al presionar la tecla `H`, `O`, `L`, `A`, y luego Enter en el teclado USB, la salida esperada será:
 
 ```plaintext
-HOLA.
+HOLA
 ```
 
 ### Ejemplo 2: Lector de Código de Barras
