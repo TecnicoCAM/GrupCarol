@@ -4,6 +4,7 @@ Gracias a todos los que han contribuido a este proyecto. Si hiciste tu primera c
 
 ## Contribuidores:
 - [Tecnico CAM](https://github.com/TecnicoCAM)
+- [Héctor Núñez Carpio](https://github.com/henukk)
 
 ---
 
